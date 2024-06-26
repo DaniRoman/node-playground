@@ -1,4 +1,4 @@
-ARG NODE_VERSION=18.0.0
+ARG NODE_VERSION=20.15.0
 
 FROM node:${NODE_VERSION} as prod
 
@@ -10,6 +10,8 @@ ENV NODE_ENV=production
 RUN apt-get update && apt-get install tini
 
 WORKDIR /app
+
+USER node
 
 COPY package*.json ./
 
