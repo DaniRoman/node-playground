@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Docker Node.js Launch",
+            "type": "docker",
+            "request": "launch",
+            // "remoteRoot":"/app",
+            // "port": 9229,
+            // "address":"localhost",
+            // "localRoot":"${workspaceFolder}",
+            // "protocol":"inspector",
+            // "restart":"true",
+            "preLaunchTask": "docker-run: debug",
+            "platform": "node"
+        }
+    ]
+}

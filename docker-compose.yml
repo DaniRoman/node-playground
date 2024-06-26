@@ -1,0 +1,16 @@
+version: '2.3'
+services:
+  app:
+    build: 
+      context: .
+      target: dev
+    # command: /app/node_modules/.bin/nodemon
+    command: ["/app/node_modules/.bin/nodemon", "--inspect=0.0.0.0:9229", "index.js"]
+    ports:
+      - 3000:3000
+      # - 9229:9229
+    volumes:
+      - .:/app
+    environment:
+      NODE_ENV: development
+    
