@@ -1,6 +1,11 @@
+const prisma = require('../../client');
+
 const userController = {
-    funct1(req, res) {
-        return res.send({obj:'EL Gran Hasbula'});
+    async userPost(req, res) {
+        const { email, name } = req.body;
+        await prisma.user.create({
+            data: { email, name },
+        });
     },
 };
 
