@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --watchAll",
     "test:unit": "jest --watchAll --selectProjects unit",
-    "test:integration": "jest --watchAll --selectProjects integration"
+    "test:integration": "jest --watchAll --selectProjects integration",
+    "test:integrationDebug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
   },
   "author": "",
   "license": "ISC",

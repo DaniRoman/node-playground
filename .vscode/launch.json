@@ -4,14 +4,28 @@
             "name": "Docker Node.js Launch",
             "type": "docker",
             "request": "launch",
-            // "remoteRoot":"/app",
-            // "port": 9229,
-            // "address":"localhost",
-            // "localRoot":"${workspaceFolder}",
-            // "protocol":"inspector",
-            // "restart":"true",
             "preLaunchTask": "docker-run: debug",
-            "platform": "node"
-        }
+            "platform": "node",
+            "node": {
+                "remoteRoot": "/app",
+                "localRoot": "${workspaceFolder}"
+            },
+            "port": 9229,
+            "address": "localhost",
+            "protocol": "inspector",
+            "restart": true
+        },
+        {
+            "name": "Debug Jest Tests",
+            "type": "node",
+            "request": "launch",
+            "runtimeArgs": [
+              "--inspect-brk",
+              "${workspaceRoot}/node_modules/.bin/jest",
+              "--runInBand"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+          }
     ]
 }

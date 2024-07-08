@@ -62,10 +62,10 @@ const config = {
   // forceCoverageMatch: [],
 
   // A path to a module which exports an async function that is triggered once before all test suites
-  // globalSetup: undefined,
+  globalSetup: "./__tests__/integration/_setup.js",
 
   // A path to a module which exports an async function that is triggered once after all test suites
-  // globalTeardown: undefined,
+  globalTeardown: "./__tests__/integration/_teardown.js",
 
   // A set of global variables that need to be available in all test environments
   // globals: {},
@@ -142,7 +142,7 @@ const config = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [`./__test__/helpers/setup-jest.js`],
+  setupFilesAfterEnv: [`./__tests__/integration/jest.integration.setup.js`],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -165,9 +165,11 @@ const config = {
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "./__tests__/integration/_setup.js",
+    "./__tests__/integration/_teardown.js",
+  ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],

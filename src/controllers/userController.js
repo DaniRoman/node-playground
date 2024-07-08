@@ -6,6 +6,8 @@ const userController = {
         await prisma.user.create({
             data: { email, name },
         });
+        console.log("aloha para despues del post ");
+
     },
 };
 

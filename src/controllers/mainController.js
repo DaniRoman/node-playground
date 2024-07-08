@@ -1,6 +1,10 @@
 const mainController = {
     funct1(req, res) {
-        return res.send({obj:'EL Gran Hasbula'});
+        let one = { obj: 'EL Gran Hasbula' };
+        console.log(one);
+        console.log("Joser");
+
+        return res.send(one);
     },
 };
 
