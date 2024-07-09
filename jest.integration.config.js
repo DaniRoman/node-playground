@@ -12,6 +12,7 @@ const config = {
   // bail: 0,
 
   displayName: "integration",
+  testTimeout: 10000,
 
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/tmp/jest_rs",

@@ -1,6 +1,5 @@
 const request = require('supertest');
 const app = require('../../app');
-const { prismaMock } = require('../../singleton');
 
 it('do something', async function () {
     const response = await request(app).get('/');

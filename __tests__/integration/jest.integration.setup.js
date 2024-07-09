@@ -1,6 +1,9 @@
 const resetDb = require('../helpers/reset-db');
+const prisma = require('../helpers/prisma');
+
 
 beforeEach(async () => {
-    // console.log('Ejecutando beforeAll para restablecer la base de datos');
-    // await resetDb();
+
+    await resetDb();
+
   });
