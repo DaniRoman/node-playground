@@ -1,24 +1,26 @@
 const prisma = require('../../__tests__/helpers/prisma');
+const bcrypt = require('bcrypt');
+const userHelper = require('../helpers/user/userHelper');
 
 const userController = {
     async userPost(req, res) {
-        const { email, name } = req.body;
-        await prisma.user.create({
-            data: { email, name },
-        });
-        console.log("aloha para despues del post ");
 
-    },
-    async userGet(req, res){
+        const { email, name, password } = req.body;
+        const hashedPassword = await userHelper.passwordHaser(password);
         try {
-            allUsers = await prisma.user.findMany()
-            console.log(`Todos los usuarios son: ${allUsers}`)
+            await prisma.user.create({
+                data: { email, name, password:hashedPassword },
+            });
+
+            res.status(200).json({ message: 'User created Successfully!' });
         } catch (error) {
-            console.log("El error es: ", error)
+            console.error(`Error creating the user: ${error}`);
         }
-        
-        console.log("Get del User")
-    }
+    },
+
+    async userGet(req, res) {
+        res.status(200).json({ message: 'Success!' });
+    },
 };
 
 module.exports = userController;

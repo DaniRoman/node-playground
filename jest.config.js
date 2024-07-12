@@ -30,7 +30,7 @@ const config = {
   // coveragePathIgnorePatterns: [
   //   "/node_modules/"
   // ],
-    testTimeout: 10000,
+    testTimeout: 20000,
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",

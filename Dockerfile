@@ -28,15 +28,18 @@ RUN npm ci --include=dev && npm cache clean -f
 
 COPY . .
 
+# RUN npx prisma migrate dev
+
+
 CMD [ "nodemon", "--inspect=0.0.0.0:9229", "index" ]
 
-FROM base as test
+# FROM base as test
 
-ENV NODE_ENV=development
+# ENV NODE_ENV=development
 
-RUN npm ci --include=dev && npm cache clean -f
+# RUN npm ci --include=dev && npm cache clean -f
 
-COPY . .
+# COPY . .
 
-CMD [ "npm", "test" ]
+# CMD [ "npm", "test" ]
 

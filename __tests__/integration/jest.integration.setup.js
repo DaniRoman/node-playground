@@ -1,9 +1,7 @@
-const resetDb = require('../helpers/reset-db');
+const dbHelper = require('../helpers/db-helper');
 const prisma = require('../helpers/prisma');
 
 
 beforeEach(async () => {
-
-    await resetDb();
-
+    await dbHelper.resetDb();
   });
